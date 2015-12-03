@@ -1,24 +1,4 @@
 <?php
-/**
- * Custom Meta Box Class
- *
- * The Meta Box Class is used by including it in your plugin files and using its methods to
- * create custom meta boxes for custom post types. It is meant to be very simple and
- * straightforward. For name spacing purposes, All Types metabox ( meaning you can do anything with it )
- * is used.
- *
- * This class is derived from Ohad Raz (email: admin@bainternet.info) and Meta Box script by Rilwis<rilwis@gmail.com> version 3.2.
- * which later was forked by Cory Crowley (email: cory.ivan@gmail.com) The purpose of this class is not to rewrite the script but to
- * modify and change small things and adding a few field types that i needed to my personal preference.
- * The original author did a great job in writing this class, so all props goes to him.
- *
- * @category CyberChimps Framework
- * @package  Framework
- * @since    1.0
- * @author   CyberChimps
- * @license  http://www.opensource.org/licenses/gpl-license.php GPL v3.0 (or later)
- * @link     http://www.cyberchimps.com/
- */
 
 // TODO CyberChimps have changed the markup of this class don't just update by copying over it
 
@@ -169,15 +149,15 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 				// Load color picker
 				wp_enqueue_style( 'color-picker', $directory_uri . '/cyberchimps/options/lib/css/colorpicker.css' );
-				wp_enqueue_script( 'color-picker-js', $directory_uri . '/cyberchimps/options/lib/js/colorpicker.min.js', array( 'jquery' ), '', true );
+				wp_enqueue_script( 'color-picker-js', $directory_uri . '/cyberchimps/options/lib/js/colorpicker.js', array( 'jquery' ), '', true );
 				
 				// Enqueue Meta Box Scripts
-				wp_enqueue_script( 'at-meta-box', $metabox_uri . '/js/meta-box.min.js', array( 'jquery' ), null, true );
+				wp_enqueue_script( 'at-meta-box', $metabox_uri . '/js/meta-box.js', array( 'jquery' ), null, true );
 				// Enqueue Cyberchimps Scripts
-				wp_enqueue_script( 'meta-boxes-js', $metabox_uri . '/js/metabox-tabs.min.js', array( 'jquery' ), null, true );
+				wp_enqueue_script( 'meta-boxes-js', $metabox_uri . '/js/metabox-tabs.js', array( 'jquery' ), null, true );
 				// Enqueue Media uploader for single images TODO look into removing this and use this classes image uploader that saves images as an array. Will need to change all elements to be
 //              TODO able to work with this
-				wp_enqueue_script( 'cc-media-uploader-js', get_template_directory_uri() . '/cyberchimps/lib/js/media-uploader-new.min.js', array( 'jquery' ), null, true );
+				wp_enqueue_script( 'cc-media-uploader-js', get_template_directory_uri() . '/cyberchimps/lib/js/media-uploader-new.js', array( 'jquery' ), null, true );
 
 				// Make upload feature work event when custom post type doesn't support 'editor'
 				if( $this->has_field( 'image' ) || $this->has_field( 'file' ) ) {
@@ -288,7 +268,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				// Enqueu JQuery UI, use proper version.
 				wp_enqueue_style( 'at-jquery-ui-css', $plugin_path . '/js/jquery-ui/jquery-ui.css' );
 				wp_enqueue_script( 'jquery-ui' );
-				wp_enqueue_script( 'at-timepicker', $plugin_path . '/js/jquery-ui/jquery-ui-timepicker-addon.min.js', array( 'jquery-ui-slider', 'jquery-ui-datepicker' ), false, true );
+				wp_enqueue_script( 'at-timepicker', $plugin_path . '/js/jquery-ui/jquery-ui-timepicker-addon.js', array( 'jquery-ui-slider', 'jquery-ui-datepicker' ), false, true );
 			}
 		}
 

@@ -28,7 +28,7 @@ function cyberchimps_add_elements_style() {
 
 	wp_enqueue_style( 'elements_style', $directory_uri . '/elements/lib/css/elements.css' );
 
-	wp_enqueue_script( 'elements_js', $directory_uri . '/elements/lib/js/elements.min.js' );
+	wp_enqueue_script( 'elements_js', $directory_uri . '/elements/lib/js/elements.js' );
 }
 
 add_action( 'wp_enqueue_scripts', 'cyberchimps_add_elements_style', 30 );
@@ -37,18 +37,13 @@ add_action( 'wp_enqueue_scripts', 'cyberchimps_add_elements_style', 30 );
 // Set directory path
 $directory_path = get_template_directory();
 
-require_once( $directory_path . '/elements/parallax.php' );
-require_once( $directory_path . '/elements/portfolio-lite.php' );
-require_once( $directory_path . '/elements/slider-lite.php' );
 require_once( $directory_path . '/elements/boxes.php' );
 
 // main blog drag and drop options
 function cyberchimps_selected_elements() {
 	$options = array(
 		'boxes_lite'     => __( 'Boxes Lite', 'cyberchimps_elements' ),
-		"portfolio_lite" => __( 'Portfolio Lite', 'cyberchimps_elements' ),
-		"blog_post_page" => __( 'Post Page', 'cyberchimps_elements' ),
-		"slider_lite"    => __( 'Slider Lite', 'cyberchimps_elements' )
+		"blog_post_page" => __( 'Post Page', 'cyberchimps_elements' )
 	);
 
 	return $options;
@@ -59,9 +54,7 @@ add_filter( 'cyberchimps_elements_draganddrop_options', 'cyberchimps_selected_el
 function cyberchimps_selected_page_elements() {
 	$options = array(
 		'boxes_lite'     => __( 'Boxes Lite', 'cyberchimps_elements' ),
-		"portfolio_lite" => __( 'Portfolio Lite', 'cyberchimps_elements' ),
-		"page_section"   => __( 'Page', 'cyberchimps_elements' ),
-		"slider_lite"    => __( 'Slider Lite', 'cyberchimps_elements' )
+		"page_section"   => __( 'Page', 'cyberchimps_elements' )
 	);
 
 	return $options;
@@ -115,17 +108,6 @@ function cyberchimps_install_plugins() {
 		)
 	);
 
-	// Check if slider pro plugin already installed.
-	$existing_plugins = get_plugins();
-	if( !array_key_exists( 'ifeatureslider/ifeatureslider.php', $existing_plugins ) ) {
-	
-		$plugins[] = array(
-				'name'     => 'iFeature Slider', // The plugin name
-				'slug'     => 'ifeature-slider', // The plugin slug (typically the folder name)
-				'required' => false
-		);
-	}	
-		
 	// Change this to your theme text domain, used for internationalising strings
 	$theme_text_domain = 'cyberchimps_elements';
 

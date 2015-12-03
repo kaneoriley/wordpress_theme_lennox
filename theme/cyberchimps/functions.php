@@ -49,34 +49,30 @@ function cyberchimps_core_scripts() {
 
 	// set up slimbox for gallery images
 	if( cyberchimps_get_option( 'gallery_lightbox', 1 ) ) {
-		wp_enqueue_script( 'gallery-lightbox', $js_path . 'gallery-lightbox.min.js', array( 'jquery' ), '1.0' );
+		wp_enqueue_script( 'gallery-lightbox', $js_path . 'gallery-lightbox.js', array( 'jquery' ), '1.0' );
 	}
 
 	// Load JS for slimbox
-	wp_enqueue_script( 'slimbox', $js_path . 'jquery.slimbox.min.js', array( 'jquery' ), '1.0' );
-
-	// Load library for jcarousel
-	wp_enqueue_script( 'jcarousel', $js_path . 'jquery.jcarousel.min.js', array( 'jquery' ), '1.0' );
+	wp_enqueue_script( 'slimbox', $js_path . 'jquery.slimbox.js', array( 'jquery' ), '1.0' );
 
 	//touch swipe gestures
-	wp_enqueue_script( 'jquery-mobile-touch', $js_path . 'jquery.mobile.custom.min.js', array( 'jquery' ) );
-	wp_enqueue_script( 'slider-call', $js_path . 'swipe-call.min.js', array( 'jquery', 'jquery-mobile-touch' ) );
+	wp_enqueue_script( 'jquery-mobile-touch', $js_path . 'jquery.mobile.custom.js', array( 'jquery' ) );
 
 	// Load Bootstrap Library Items
-	wp_enqueue_style( 'bootstrap-style', $bootstrap_path . 'css/bootstrap.min.css', false, '2.0.4' );
-	wp_enqueue_style( 'bootstrap-responsive-style', $bootstrap_path . 'css/bootstrap-responsive.min.css', array( 'bootstrap-style' ), '2.0.4' );
-	wp_enqueue_script( 'bootstrap-js', $bootstrap_path . 'js/bootstrap.min.js', array( 'jquery' ), '2.0.4', true );
+	wp_enqueue_style( 'bootstrap-style', $bootstrap_path . 'css/bootstrap.css', false, '2.0.4' );
+	wp_enqueue_style( 'bootstrap-responsive-style', $bootstrap_path . 'css/bootstrap-responsive.css', array( 'bootstrap-style' ), '2.0.4' );
+	wp_enqueue_script( 'bootstrap-js', $bootstrap_path . 'js/bootstrap.js', array( 'jquery' ), '2.0.4', true );
 
 	//responsive design
 	if( cyberchimps_get_option( 'responsive_design', 'checked' ) ) {
-		wp_enqueue_style( 'cyberchimps_responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.min.css', array( 'bootstrap-responsive-style', 'bootstrap-style' ), '1.0' );
+		wp_enqueue_style( 'cyberchimps_responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.css', array( 'bootstrap-responsive-style', 'bootstrap-style' ), '1.0' );
 	}
 	else {
 		wp_dequeue_style( 'cyberchimps_responsive' );
 	}
 
 	// Load core JS
-	wp_enqueue_script( 'core-js', $js_path . 'core.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'core-js', $js_path . 'core.js', array( 'jquery' ) );
 	
 	// Placeholder fix for IE8/9
 	if(preg_match('/(?i)msie [8-9]/',$_SERVER['HTTP_USER_AGENT']))
@@ -87,7 +83,7 @@ function cyberchimps_core_scripts() {
 	/**
 	 * With the use of @2x at the end of an image it will use that to display the retina image. Both images have to been in the same folder
 	 */
-	wp_enqueue_script( 'retina-js', $js_path . 'retina-1.1.0.min.js', '', '1.1.0', true );
+	wp_enqueue_script( 'retina-js', $js_path . 'retina-1.1.0.js', '', '1.1.0', true );
 
 	// Load Core Stylesheet
 	wp_enqueue_style( 'core-style', $directory_uri . '/cyberchimps/lib/css/core.css', array( 'bootstrap-responsive-style', 'bootstrap-style' ), '1.0' );
@@ -101,7 +97,7 @@ function cyberchimps_core_scripts() {
 	}
 
 	if( cyberchimps_get_option( 'responsive_videos' ) == '1' ) {
-		wp_enqueue_script( 'video', $js_path . 'video.min.js' );
+		wp_enqueue_script( 'video', $js_path . 'video.js' );
 	}
 
 }
@@ -1046,38 +1042,6 @@ function cyberchimps_setPostViews( $postID ) {
 /* To correct issue: adjacent_posts_rel_link_wp_head causes meta to be updated multiple times */
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 
-// Set up half slide for iFeature pro slider, adds it before post/page content
-function cyberchimps_half_slider() {
-	global $post;
-	if( is_page() ) {
-		$page_section_order = get_post_meta( $post->ID, 'cyberchimps_page_section_order', true );
-		//if page_section_order is empty sets page as default
-		$page_section_order = ( $page_section_order == '' ) ? array( 'page_section' ) : $page_section_order;
-		if( in_array( 'page_slider', $page_section_order, true ) ) {
-			$slider_size = get_post_meta( $post->ID, 'cyberchimps_slider_size', true );
-			if( $slider_size == 'half' ) {
-				do_action( 'page_slider' );
-			}
-		}
-	}
-	else {
-		$blog_section_order = cyberchimps_get_option( 'blog_section_order' );
-		//select default in case options are empty
-		$blog_section_order = ( $blog_section_order == '' ) ? array( 'blog_post_page' ) : $blog_section_order;
-		if( in_array( 'page_slider', $blog_section_order, true ) ) {
-			$slider_size = cyberchimps_get_option( 'blog_slider_size' );
-			if( $slider_size == 'half' ) {
-				do_action( 'page_slider' );
-			}
-		}
-	}
-}
-
-// Hook action to after/before content hook depending upon slider order.
-function cyberchimps_add_half_slider_action( $slider_order ) {
-	add_action( 'cyberchimps_' . $slider_order . '_content', 'cyberchimps_half_slider' );
-}
-
 // Help text
 function cyberchimps_options_help_text() {
 	$text            = '';
@@ -1112,7 +1076,7 @@ function cyberchimps_options_help_text() {
 						</div>
 						<div class="clear"></div>';
 		$text .= sprintf(
-			'<p>' . __( 'For even more amazing new features, upgrade to %1$s which includes a slider with customizable features, an image carousel, widgetized boxes, a callout section, expanded typography (including Google Fonts), additional color skins, and many more powerful new features. Visit %2$s to learn more!', 'cyberchimps_core' ) . '</p>',
+			'<p>' . __( 'For even more amazing new features, upgrade to %1$s which includes widgetized boxes, a callout section, expanded typography (including Google Fonts), additional color skins, and many more powerful new features. Visit %2$s to learn more!', 'cyberchimps_core' ) . '</p>',
 			'<a href="' . $upgrade_link . ' title="' . $pro_title . '">' . $pro_title . '</a>',
 			'<a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a>'
 		);
@@ -1172,7 +1136,7 @@ if( cyberchimps_theme_check() == 'free' ) {
 // Hide preview and view on custom post types
 function cyberchimps_posttype_admin_css() {
 	global $post_type;
-	if( $post_type == 'custom_slides' || $post_type == 'boxes' || $post_type == 'featured_posts' || $post_type == 'portfolio_images' ) {
+	if( $post_type == 'custom_slides' || $post_type == 'boxes' || $post_type == 'featured_posts' ) {
 		echo '<style type="text/css">#view-post-btn,#post-preview{display: none;}</style>';
 	}
 }

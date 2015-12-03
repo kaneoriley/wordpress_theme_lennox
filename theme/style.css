@@ -1,10 +1,10 @@
 /*
-Theme Name: Fresh Lite
-Theme URI: http://cyberchimps.com/fresh-lite/
-Author: CyberChimps
-Author URI: http://www.cyberchimps.com/
-Description: Fresh Lite is a fully Responsive Drag & Drop Starter WordPress Theme that adds amazing new functionality to your WordPress website. Featuring Twitter Bootstrap, and responsive touch friendly theme options that work on any device. Please use the <a href="http://cyberchimps.com/forum/">official support forum</a> (http://cyberchimps.com/forum/). Thank you.
-Version: 1.0.45
+Theme Name: Lennox
+Theme URI: https://github.com/lennykano/wordpress_theme_lennox
+Author: Kane O'Riley
+Author URI: http://oriley.me/
+Description: Lennox is a fully Responsive Drag & Drop Starter WordPress Theme that adds amazing new functionality to your WordPress website. Featuring Twitter Bootstrap, and responsive touch friendly theme options that work on any device.
+Version: 0.1
 Tags: white, gray, green, light, two-columns, right-sidebar, responsive-layout, fixed-layout, custom-background, custom-colors, custom-menu, featured-images, post-formats, theme-options, sticky-post
 License: GNU General Public License version 3
 License URI: http://www.opensource.org/licenses/gpl-license.php GPL v3.0 (or later)
@@ -895,20 +895,6 @@ table#wp-calendar td {
 /******************************************** ELEMENTS **************************************************************/
 /********************************************************************************************************************/
 
-/*==================================== SLIDER =====================================================*/
-
-#slider-lite .carousel-control {
-	border-color: #a1ba3a;
-	color: #a1ba3a;
-	line-height: 30px;
-	opacity: 1;
-}
-
-#slider-lite .carousel-control:hover {
-	opacity: 0.5;
-	filter: alpha(opacity=50);
-}
-
 /*==================================== WIDGET BOXES ===============================================*/
 
 .box {
@@ -969,34 +955,6 @@ table#wp-calendar td {
 	.box {
 		margin-bottom: 1px;
 	}
-}
-
-/*==================================== PORTFOLIO ===================================================*/
-
-#gallery {
-	padding: 20px 0;
-	background: #ffffff;
-}
-
-#gallery ul.row-fluid {
-	margin: 0;
-	padding: 0;
-}
-
-#gallery h2 {
-	margin-top: 0;
-	color: #a1ba3a;
-	font-weight: 400;
-	font-size: 1.6em;
-	line-height: 1em;
-}
-
-#gallery ul.row-fluid li#portfolio_wrap {
-	text-align: center;
-}
-
-#gallery ul.row-fluid li#portfolio_wrap .portfolio-item {
-	margin-bottom: 20px;
 }
 
 /********************************************************************************************************************/

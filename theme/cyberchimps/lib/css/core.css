@@ -72,26 +72,6 @@
 
 /* === FOOTER === */
 
-@import url('http://fonts.googleapis.com/css?family=Bitter');
-
-#after_footer .cc-credit-logo {
-	float: left;
-}
-
-#after_footer .cc-credit-text {
-	float: left;
-	margin-top: 5px;
-	margin-left: 5px;
-	color: #9b9c9b;
-	font-family: 'Bitter', serif;
-	margin-right: 10px;
-}
-
-#after_footer .cc-credit-text span {
-	color: #22699d;
-	font-weight: 200;
-}
-
 .market {
 	line-height:2.3;
 }

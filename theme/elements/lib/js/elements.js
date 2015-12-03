@@ -39,7 +39,4 @@ jQuery(window).load(function ($) {
 		})
 	});
 
-	//starts carousel cycle
-	jQuery('.carousel').carousel('cycle');
-
 });

@@ -1,78 +1,3 @@
-jQuery("#publish").click(function () {
-	return(validate_portfolio_link_one() && validate_portfolio_link_two() && validate_portfolio_link_three() && validate_portfolio_link_four())
-});
-jQuery("#cyberchimps_portfolio_link_url_one").blur(function () {
-	return validate_portfolio_link_one()
-});
-jQuery("#cyberchimps_portfolio_link_url_two").blur(function () {
-	return validate_portfolio_link_two()
-});
-jQuery("#cyberchimps_portfolio_link_url_three").blur(function () {
-	return validate_portfolio_link_three()
-});
-jQuery("#cyberchimps_portfolio_link_url_four").blur(function () {
-	return validate_portfolio_link_four()
-});
-function validate_portfolio_link_one() {
-	if (jQuery("#checkbox-cyberchimps_portfolio_link_toggle_one").is(":checked")) {
-		jQuery("tr.cyberchimps_portfolio_link_url_one td").append("<lable class='validation_error' id='url_validation_msg1'></lable>");
-		var a = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-		var b = jQuery("#cyberchimps_portfolio_link_url_one").val();
-		if ((b.search(a)) == -1 || b == "") {
-			jQuery("#url_validation_msg1").html("Please enter a valid URL");
-			alert("Please enter a valid URL for Portfolio Lite Options");
-			return false
-		} else {
-			jQuery("#url_validation_msg1").html("")
-		}
-	}
-	return true
-}
-function validate_portfolio_link_two() {
-	if (jQuery("#checkbox-cyberchimps_portfolio_link_toggle_two").is(":checked")) {
-		jQuery("tr.cyberchimps_portfolio_link_url_two td").append("<lable class='validation_error' id='url_validation_msg2'></lable>");
-		var a = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-		var b = jQuery("#cyberchimps_portfolio_link_url_two").val();
-		if ((b.search(a)) == -1 || b == "") {
-			jQuery("#url_validation_msg2").html("Please enter a valid URL");
-			alert("Please enter a valid URL for Portfolio Lite Options");
-			return false
-		} else {
-			jQuery("#url_validation_msg2").html("")
-		}
-	}
-	return true
-}
-function validate_portfolio_link_three() {
-	if (jQuery("#checkbox-cyberchimps_portfolio_link_toggle_three").is(":checked")) {
-		jQuery("tr.cyberchimps_portfolio_link_url_three td").append("<lable class='validation_error' id='url_validation_msg3'></lable>");
-		var a = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-		var b = jQuery("#cyberchimps_portfolio_link_url_three").val();
-		if ((b.search(a)) == -1 || b == "") {
-			jQuery("#url_validation_msg3").html("Please enter a valid URL");
-			alert("Please enter a valid URL for Portfolio Lite Options");
-			return false
-		} else {
-			jQuery("#url_validation_msg3").html("")
-		}
-	}
-	return true
-}
-function validate_portfolio_link_four() {
-	if (jQuery("#checkbox-cyberchimps_portfolio_link_toggle_four").is(":checked")) {
-		jQuery("tr.cyberchimps_portfolio_link_url_four td").append("<lable class='validation_error' id='url_validation_msg4'></lable>");
-		var a = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-		var b = jQuery("#cyberchimps_portfolio_link_url_four").val();
-		if ((b.search(a)) == -1 || b == "") {
-			jQuery("#url_validation_msg4").html("Please enter a valid URL");
-			alert("Please enter a valid URL for Portfolio Lite Options");
-			return false
-		} else {
-			jQuery("#url_validation_msg4").html("")
-		}
-	}
-	return true
-}
 jQuery(document).ready(function (b) {
 	var c = jQuery('[name="cyberchimps_featured_post_category_toggle"]').val();
 	if (c == 0) {
@@ -117,10 +42,8 @@ jQuery(document).ready(function (b) {
 	});
 	b("#subsection-Boxes-Lite-Element").children(".subsection-items").show();
 	b("#subsection-Custom-Slide-Options > h4").click();
-	b("#subsection-Featured-Post-Carousel-Options > h4").click();
-	b("#subsection-Portfolio-Element > h4").click();
 	b("#subsection-Page-Options > h4").click();
-	var a = {page_slider: "subsection-iFeature-Slider-Options", page_nivoslider: "subsection-iFeature-Pro-NivoSlider-Options", callout_section: "subsection-Callout-Options", carousel_section: "subsection-Carousel-Options", html_box: "subsection-HTML-Box-Options", portfolio_pro: "subsection-Portfolio-Options", custom_html_element: "subsection-Custom-HTML", product_element: "subsection-Product-Options", twitterbar_section: "subsection-Twitter-Options", magazine: "subsection-Magazine-Layout-Options", slider_lite: "subsection-Slider-Lite-Options", portfolio_lite: "subsection-Portfolio-Lite-Options", recent_posts: "subsection-Recent-Posts-Options", boxes: "subsection-Boxes-Options"};
+	var a = {page_slider: "subsection-iFeature-Slider-Options", page_nivoslider: "subsection-iFeature-Pro-NivoSlider-Options", callout_section: "subsection-Callout-Options", html_box: "subsection-HTML-Box-Options", custom_html_element: "subsection-Custom-HTML", product_element: "subsection-Product-Options", twitterbar_section: "subsection-Twitter-Options", magazine: "subsection-Magazine-Layout-Options", recent_posts: "subsection-Recent-Posts-Options", boxes: "subsection-Boxes-Options"};
 	b(".section-order-tracker").change(function () {
 		var d = b(this).val().split(",");
 		b.each(a, function (e, f) {
@@ -183,22 +106,6 @@ jQuery(document).ready(function (b) {
 			d.hide()
 		}
 	}).trigger("change");
-	b("#checkbox-portfolio_title_toggle").change(function () {
-		var d = b("tr.portfolio_title");
-		if (b(this).is(":checked")) {
-			d.show()
-		} else {
-			d.hide()
-		}
-	}).trigger("change");
-	b("#checkbox-cyberchimps_portfolio_title_toggle").change(function () {
-		var d = b("tr.cyberchimps_portfolio_title");
-		if (b(this).is(":checked")) {
-			d.show()
-		} else {
-			d.hide()
-		}
-	}).trigger("change");
 	b("#checkbox-cyberchimps_recent_posts_title_toggle").change(function () {
 		var d = b("tr.cyberchimps_recent_posts_title");
 		if (b(this).is(":checked")) {
@@ -215,48 +122,8 @@ jQuery(document).ready(function (b) {
 			d.hide()
 		}
 	}).trigger("change");
-	b("#checkbox-cyberchimps_portfolio_link_toggle_one").change(function () {
-		var d = b("tr.cyberchimps_portfolio_link_url_one");
-		if (b(this).is(":checked")) {
-			d.show()
-		} else {
-			d.hide()
-		}
-	}).trigger("change");
-	b("#checkbox-cyberchimps_portfolio_link_toggle_two").change(function () {
-		var d = b("tr.cyberchimps_portfolio_link_url_two");
-		if (b(this).is(":checked")) {
-			d.show()
-		} else {
-			d.hide()
-		}
-	}).trigger("change");
-	b("#checkbox-cyberchimps_portfolio_link_toggle_three").change(function () {
-		var d = b("tr.cyberchimps_portfolio_link_url_three");
-		if (b(this).is(":checked")) {
-			d.show()
-		} else {
-			d.hide()
-		}
-	}).trigger("change");
-	b("#checkbox-cyberchimps_portfolio_link_toggle_four").change(function () {
-		var d = b("tr.cyberchimps_portfolio_link_url_four");
-		if (b(this).is(":checked")) {
-			d.show()
-		} else {
-			d.hide()
-		}
-	}).trigger("change");
 	b("#checkbox-cyberchimps_magazine_wide_post_toggle").change(function () {
 		var d = b("tr.cyberchimps_magazine_no_of_wide_posts");
-		if (b(this).is(":checked")) {
-			d.show()
-		} else {
-			d.hide()
-		}
-	}).trigger("change");
-	b("#checkbox-custom_portfolio_url_toggle").change(function () {
-		var d = b("tr.custom_portfolio_url");
 		if (b(this).is(":checked")) {
 			d.show()
 		} else {

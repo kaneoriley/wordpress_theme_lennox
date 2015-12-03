@@ -119,8 +119,8 @@ msgstr ""
 
 #: functions.php:1109
 msgid ""
-"For even more amazing new features, upgrade to %1$s which includes a slider "
-"with customizable features, an image carousel, widgetized boxes, a callout "
+"For even more amazing new features, upgrade to %1$s "
+"with customizable features, widgetized boxes, a callout "
 "section, expanded typography (including Google Fonts), additional color "
 "skins, and many more powerful new features. Visit %2$s to learn more!"
 msgstr ""
@@ -171,11 +171,6 @@ msgstr ""
 
 #: functions.php:1420
 msgid "Install Easy Digital Downloads Plugin"
-msgstr ""
-
-#: hooks/blog-hooks.php:23 options/meta-box-class/meta-box.php:57
-#: options/options-core.php:1034 options/options-core.php:1043
-msgid "Slider Lite"
 msgstr ""
 
 #: hooks/blog-hooks.php:24 options/meta-box-class/meta-box.php:54
@@ -233,10 +228,6 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: options/meta-box-class/meta-box.php:56 options/options-core.php:1041
-msgid "Portfolio Lite"
-msgstr ""
-
 #: options/meta-box-class/meta-box.php:58
 msgid "Twitter Bar"
 msgstr ""
@@ -251,14 +242,6 @@ msgstr ""
 
 #: options/meta-box-class/meta-box.php:75
 msgid "Page Options"
-msgstr ""
-
-#: options/meta-box-class/meta-box.php:96
-msgid "Slider Image"
-msgstr ""
-
-#: options/meta-box-class/meta-box.php:103
-msgid "Slider Caption"
 msgstr ""
 
 #: options/meta-box-class/meta-box.php:109
@@ -357,20 +340,8 @@ msgstr ""
 msgid "Blog Options"
 msgstr ""
 
-#: options/options-core.php:147
-msgid "Blog Slider Lite"
-msgstr ""
-
-#: options/options-core.php:153
-msgid "Portfolio Lite Options"
-msgstr ""
-
 #: options/options-core.php:159
 msgid "Boxes Lite"
-msgstr ""
-
-#: options/options-core.php:169
-msgid "Blog Slider"
 msgstr ""
 
 #: options/options-core.php:175
@@ -379,14 +350,6 @@ msgstr ""
 
 #: options/options-core.php:181
 msgid "HTML Box Options"
-msgstr ""
-
-#: options/options-core.php:187
-msgid "Carousel Options"
-msgstr ""
-
-#: options/options-core.php:193
-msgid "Portfolio Pro Options"
 msgstr ""
 
 #: options/options-core.php:199
@@ -790,119 +753,13 @@ msgstr ""
 msgid "Third Box Text"
 msgstr ""
 
-#: options/options-core.php:1308
-msgid "Portfolio Upgrade"
-msgstr ""
-
-#: options/options-core.php:1311
-msgid ""
-"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
-"Upgrade to %1$s to be able to create as many portfolio items as you like. "
-"Categorize them and display each category on a different page."
-msgstr ""
-
-#: options/options-core.php:1323
-msgid "First Portfolio Image"
-msgstr ""
-
-#: options/options-core.php:1334
-msgid "First Portfolio Image Caption"
-msgstr ""
-
-#: options/options-core.php:1344
-msgid "First Porfolio Link"
-msgstr ""
-
-#: options/options-core.php:1367
-msgid "Second Portfolio Image"
-msgstr ""
-
-#: options/options-core.php:1378
-msgid "Second Portfolio Image Caption"
-msgstr ""
-
-#: options/options-core.php:1388
-msgid "Second Porfolio Link"
-msgstr ""
-
-#: options/options-core.php:1411
-msgid "Third Portfolio Image"
-msgstr ""
-
-#: options/options-core.php:1422
-msgid "Third Portfolio Image Caption"
-msgstr ""
-
-#: options/options-core.php:1432
-msgid "Third Porfolio Link"
-msgstr ""
-
-#: options/options-core.php:1455
-msgid "Fourth Portfolio Image"
-msgstr ""
-
-#: options/options-core.php:1466
-msgid "Fourth Portfolio Image Caption"
-msgstr ""
-
-#: options/options-core.php:1476
-msgid "Fourth Porfolio Link"
-msgstr ""
-
-#: options/options-core.php:1497 options/options-core.php:1630
-msgid "Portfolio Title"
-msgstr ""
-
-#: options/options-core.php:1519
-msgid "Slider Upgrade"
-msgstr ""
-
-#: options/options-core.php:1522
-msgid ""
-"Slider Lite limits you to a total of 3 images throughout your whole site. "
-"Upgrade to %1$s to be able to create more images. Categorize them and "
-"display each category on a different page."
-msgstr ""
-
-#: options/options-core.php:1531
-msgid "Slider Image 1"
-msgstr ""
-
-#: options/options-core.php:1541
-msgid "Slide 1 URL"
-msgstr ""
-
-#: options/options-core.php:1550
-msgid "Slider Image 2"
-msgstr ""
-
-#: options/options-core.php:1560
-msgid "Slide 2 URL"
-msgstr ""
-
-#: options/options-core.php:1569
-msgid "Slider Image 3"
-msgstr ""
-
-#: options/options-core.php:1579
-msgid "Slide 3 URL"
-msgstr ""
-
 #: options/options-core.php:1596
 msgid "Images per Row"
-msgstr ""
-
-#: options/options-core.php:1611 options/options-core.php:1620
-msgid "Portfolio Category"
 msgstr ""
 
 #: options/options-core.php:1623 options/options-core.php:1703
 #: options/options-core.php:1937 options/options-core.php:1959
 msgid "You need to create a Category"
-msgstr ""
-
-#: options/options-core.php:1649
-msgid "Slider Size"
 msgstr ""
 
 #: options/options-core.php:1654
@@ -911,10 +768,6 @@ msgstr ""
 
 #: options/options-core.php:1655
 msgid "Half"
-msgstr ""
-
-#: options/options-core.php:1662
-msgid "Slider Type"
 msgstr ""
 
 #: options/options-core.php:1668
@@ -935,18 +788,6 @@ msgstr ""
 
 #: options/options-core.php:1710
 msgid "Number of Featured Blog Posts"
-msgstr ""
-
-#: options/options-core.php:1719
-msgid "Slider Height"
-msgstr ""
-
-#: options/options-core.php:1729
-msgid "Slider Speed "
-msgstr ""
-
-#: options/options-core.php:1738
-msgid "Slider Arrows"
 msgstr ""
 
 #: options/options-core.php:1749
