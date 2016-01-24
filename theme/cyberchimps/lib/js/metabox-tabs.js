@@ -170,6 +170,22 @@ jQuery(document).ready(function (b) {
 			d.hide()
 		}
 	}).trigger("change");
+	b("#checkbox-profile_github").change(function () {
+		var d = b("tr.profile_github_url");
+		if (b(this).is(":checked")) {
+			d.show()
+		} else {
+			d.hide()
+		}
+	}).trigger("change");
+	b("#checkbox-profile_bitbucket").change(function () {
+		var d = b("tr.profile_bitbucket_url");
+		if (b(this).is(":checked")) {
+			d.show()
+		} else {
+			d.hide()
+		}
+	}).trigger("change");
 	b("#checkbox-profile_linkedin").change(function () {
 		var d = b("tr.profile_linkedin_url");
 		if (b(this).is(":checked")) {

@@ -199,6 +199,10 @@ function cyberchimps_header_social_icons() {
 	$social['map']['set']           = cyberchimps_get_option( 'social_googlemaps' );
 	$social['map']['title']         = 'google maps';
 	$social['map']['url']           = cyberchimps_get_option( 'googlemaps_url' );
+	$social['bitbucket']['set']      = cyberchimps_get_option( 'social_bitbucket', 'checked' );
+	$social['bitbucket']['url']      = cyberchimps_get_option( 'bitbucket_url' );
+	$social['github']['set']      = cyberchimps_get_option( 'social_github', 'checked' );
+	$social['github']['url']      = cyberchimps_get_option( 'github_url' );
 	$social['email']['set']         = cyberchimps_get_option( 'social_email' );
 	$social['email']['url']         = 'mailto:' . cyberchimps_get_option( 'email_url' );
 	$social['rss']['set']           = cyberchimps_get_option( 'social_rss' );

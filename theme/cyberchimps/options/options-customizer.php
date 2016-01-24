@@ -419,6 +419,58 @@ function cyberchimps_customize( $wp_customize ) {
     ) ) );
 
 
+// Add Github Setting
+
+    $wp_customize->add_setting( 'cyberchimps_options[social_github]', array(
+        'sanitize_callback' => 'cyberchimps_sanitize_checkbox',
+        'type' => 'option'
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'social_github', array(
+        'label' => __( 'Display Github?', 'cyberchimps_core' ),
+        'section' => 'cyberchimps_social_media',
+        'settings' => 'cyberchimps_options[social_github]',
+        'type' => 'checkbox'
+    ) ) );
+
+    $wp_customize->add_setting( 'cyberchimps_options[github_url]', array(
+        'sanitize_callback' => 'esc_url_raw',
+        'type' => 'option'
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'github_url', array(
+        'label' => __( 'Github URL', 'cyberchimps_core' ),
+        'section' => 'cyberchimps_social_media',
+        'settings' => 'cyberchimps_options[github_url]'
+    ) ) );
+
+
+// Add Bitbucket Setting
+
+    $wp_customize->add_setting( 'cyberchimps_options[social_bitbucket]', array(
+        'sanitize_callback' => 'cyberchimps_sanitize_checkbox',
+        'type' => 'option'
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'social_bitbucket', array(
+        'label' => __( 'Display Bitbucket?', 'cyberchimps_core' ),
+        'section' => 'cyberchimps_social_media',
+        'settings' => 'cyberchimps_options[social_bitbucket]',
+        'type' => 'checkbox'
+    ) ) );
+
+    $wp_customize->add_setting( 'cyberchimps_options[bitbucket_url]', array(
+        'sanitize_callback' => 'esc_url_raw',
+        'type' => 'option'
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'bitbucket_url', array(
+        'label' => __( 'Bitbucket URL', 'cyberchimps_core' ),
+        'section' => 'cyberchimps_social_media',
+        'settings' => 'cyberchimps_options[bitbucket_url]'
+    ) ) );
+
+
 // Add Twitter Setting
 
     $wp_customize->add_setting( 'cyberchimps_options[social_twitter]', array(

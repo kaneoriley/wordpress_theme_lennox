@@ -159,6 +159,14 @@ a.symbol.map:before {
 	content: "\f041";
 }
 
+a.symbol.bitbucket:before {
+	content: "\f171";
+}
+
+a.symbol.github:before {
+	content: "\f09b";
+}
+
 a.symbol.email:before {
 	content: "\f0e0";
 }
@@ -255,6 +263,18 @@ a.symbol:hover {
 .legacy-icons a.symbol.map {
 	border: 1px solid #74a82a;
 	background: #7fb72f;
+}
+
+.round-icons a.symbol.github,
+.legacy-icons a.symbol.github {
+	border: 1px solid #4d277a;
+	background: #722c85;
+}
+
+.round-icons a.symbol.bitbucket,
+.legacy-icons a.symbol.bitbucket {
+	border: 1px solid #183C61;
+	background: #205081;
 }
 
 .round-icons a.symbol.flickr,

@@ -141,17 +141,17 @@ header#cc-header h2.site-title {
 	margin-right: 16px;
 	text-shadow: 2px 2px 2px #000000;
 	font-weight: normal;
-	font-size: 5.5em;
+	font-size: 6.5em;
 	font-family: 'Roboto Slab', Georgia, serif;
 	line-height: 1.2;
 }
 
 header#cc-header h2.site-title a {
-	color: #2196f3;
+	color: #ffffff;
 }
 
 header#cc-header h2.site-title a:hover {
-	color: #1976d2;
+	color: #dedede;
 	text-decoration: none;
 }
 
@@ -291,6 +291,7 @@ header #search #searchform {
 	border: none;
 	margin-bottom: 5px;
         padding: 3px;
+        padding-left: 96%;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
